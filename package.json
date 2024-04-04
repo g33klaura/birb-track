@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "firebase": "^10.10.0"
+  },
+  "devDependencies": {
+    "sass": "^1.74.1"
   }
 }
