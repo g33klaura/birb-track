@@ -1,5 +1,9 @@
+import { writeFile } from 'fs';
+
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
+// import { getDatabase } from "firebase/database";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,14 +20,22 @@ const firebaseConfig = {
 
 // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
-// Doin' the magic ------------------------------------------------------------
+// console.log(db);
+
+
+// ----------------------------------------------------------------------------
+// Doin' the magic
+// ----------------------------------------------------------------------------
+
+// Should prolly assign to function then call onClick submit button
 let birbForm = document.querySelector('form');
 
 birbForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // handle submit
+  // Handle submit
   let birbName = birbForm.elements.birbName.value;
 
   var today = new Date();
@@ -33,11 +45,26 @@ birbForm.addEventListener('submit', (e) => {
 
   today = mm + '/' + dd + '/' + yyyy;
 
-  let sightingDate = today;
+  let dateSighted = today;
 
-  console.log(birbName + ' ' + sightingDate);
+  console.log(birbName + ' ' + dateSighted);
+
+  // Save to data to something that can be saved...
 
   birbForm.reset();
 });
 
-// console.log('Checking: ' + this.birbName + ' ' + this.sightingDate);
+console.log('Checking: ' + birbName + ' ' + dateSighted);
+
+// Add to json
+let jsonData = [];
+// let json = {
+//   // birbName, dateSighted, etc.
+// };
+console.log(jsonData);
+
+writeFile("./json/birbTest.txt", jsonData, function(err) {
+  if (err) {
+      console.log(err);
+  }
+});
