@@ -1,4 +1,4 @@
-import { writeFile } from 'fs';
+// import { writeFile } from 'fs';
 
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "firebase/app";
@@ -63,8 +63,15 @@ let jsonData = [];
 // };
 console.log(jsonData);
 
-writeFile("./json/birbTest.txt", jsonData, function(err) {
-  if (err) {
-      console.log(err);
-  }
+// writeFile("./json/birbTest.txt", jsonData, function(err) {
+//   if (err) {
+//       console.log(err);
+//   }
+// });
+
+import { appendFile } from 'fs';
+
+appendFile('./json/birbTest.json', ' This is my text.', function (err) {
+  if (err) throw err;
+  console.log('Updated!');
 });
