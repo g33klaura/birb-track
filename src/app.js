@@ -1,8 +1,8 @@
 // import { writeFile } from 'fs';
 
 // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getDatabase } from "firebase/database";
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,10 +19,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-// console.log(db);
+console.log(db);
 
 
 // ----------------------------------------------------------------------------
@@ -54,7 +54,7 @@ birbForm.addEventListener('submit', (e) => {
   birbForm.reset();
 });
 
-console.log('Checking: ' + birbName + ' ' + dateSighted);
+// console.log('Checking: ' + birbName + ' ' + dateSighted);
 
 // Add to json
 let jsonData = [];
