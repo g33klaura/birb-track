@@ -19,8 +19,21 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="root">
-      <h1>Oooh boy</h1>
+    <div class="app">
+      <h1>Birb Track</h1>
+
+      <form action="" method="post">
+        <label for="birbName">Enter birb</label>
+        <input type="text" id="birb" name="birbName" autocomplete="off" required></>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+          Submit
+        </button>
+      </form>
+
+      <div class="output-check">
+        <p></p>
+      </div>
     </div>
 
     <script src="src/app.js" async defer></script>
