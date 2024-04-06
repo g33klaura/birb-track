@@ -69,9 +69,9 @@ console.log(jsonData);
 //   }
 // });
 
-import { appendFile } from 'fs';
+// import { appendFile } from 'fs';
 
-appendFile('./json/birbTest.json', ' This is my text.', function (err) {
-  if (err) throw err;
-  console.log('Updated!');
-});
+// appendFile('./json/birbTest.json', ' This is my text.', function (err) {
+//   if (err) throw err;
+//   console.log('Updated!');
+// });
